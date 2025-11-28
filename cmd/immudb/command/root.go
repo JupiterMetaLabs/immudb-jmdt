@@ -94,7 +94,7 @@ func (cl *Commandline) Immudb(immudbServer server.ImmuServerIf) func(*cobra.Comm
 
 		// check if immudb needs to run in daemon mode
 		var d daem.Daemon
-		if d, err = daem.New("immudb", "immudb", "immudb"); err != nil {
+		if d, err = daem.New("immudb", "immudb", daem.SystemDaemon); err != nil {
 			c.QuitToStdErr(err)
 		}
 
